@@ -1,0 +1,30 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h3>{{user.name}}</h3>
+            <h5>{{user.email}}</h5>
+        </div>
+        <div class="logo py-4">
+            <img src="./assets/user_logo.png" height="80" />
+          </div>
+    </div>
+
+
+
+
+    <h1 matSubheader>Teams</h1>
+    <div routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+    <ul *ngIf="menuItem.tp==user.type" class="nav" >
+
+
+    <li>
+        <a   class="nav-link" [routerLink]="[menuItem.path]">
+            <i class="fa-solid fa-bed"></i>
+            {{menuItem.title}} <br><br>
+            
+        </a>
+    </li>    
+    </ul>
+    </div>
+ 
+</mat-nav-list>
